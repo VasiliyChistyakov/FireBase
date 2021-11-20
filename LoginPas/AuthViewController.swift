@@ -24,7 +24,7 @@ class AuthViewController: UIViewController {
     }
     
     @IBAction func switchLogin(_ sender: Any) {
-        
+        print(nameField.text)
         
     }
     
