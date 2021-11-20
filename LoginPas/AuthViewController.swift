@@ -6,8 +6,23 @@
 //
 
 import UIKit
+import Firebase
 
 class AuthViewController: UIViewController {
+    
+    var signup: Bool = true {
+        willSet {
+            if newValue {
+                titleLabel.text = "Регистрация"
+                nameField.isHidden = false
+                enterButton.setTitle("Войти", for: .normal)
+            } else {
+                titleLabel.text = "Вход"
+                nameField.isHidden = true
+                enterButton.setTitle("Регистрация", for: .normal)
+            }
+        }
+    }
     
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -19,13 +34,55 @@ class AuthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-    }
-    
-    @IBAction func switchLogin(_ sender: Any) {
-        print(nameField.text)
+        nameField.delegate = self
+        passwordField.delegate = self
+        emailField.delegate = self
         
     }
     
+    @IBAction func switchLogin(_ sender: UIButton) {
+        signup = !signup
+    }
+    
+    func showAllert() {
+        let allert = UIAlertController(title: "Ошибка", message: "Заполните все поля", preferredStyle: .alert)
+        allert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(allert, animated: true, completion: nil )
+    }
+}
+
+extension AuthViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let name = nameField.text!
+        let password = passwordField.text!
+        let email = emailField.text!
+        
+        if(signup) {
+            if(!name.isEmpty && !password.isEmpty && !email.isEmpty) {
+                Auth.auth().createUser(withEmail: email, password: password) { result, error in
+                    if error == nil {
+                        if let result = result{
+                            print(result.user.uid)
+                            let ref = Database.database().reference().child("users")
+                            ref.child(result.user.uid).updateChildValues(["name": name, "email": email])
+                            self.dismiss(animated: true, completion: nil)
+                        }
+                    }
+                }
+            } else {
+                showAllert()
+            }
+        } else {
+            if (!email.isEmpty && !password.isEmpty) {
+                Auth.auth().signIn(withEmail: email, password: password) { result, error in
+                    if error == nil {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
+            } else {
+                showAllert()
+            }
+        }
+        return true
+    }
 }

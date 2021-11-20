@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y8r-jQ-sFT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VYa-pV-QUX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -30,7 +30,15 @@
                             <constraint firstItem="zsw-Di-HDa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6aM-Cw-FcT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ZdQ-v5-hfB"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ZdQ-v5-hfB">
+                        <barButtonItem key="leftBarButtonItem" title="Выход" id="FDF-Le-FYF">
+                            <connections>
+                                <action selector="logoutAction:" destination="BYZ-38-t0r" id="oCE-GQ-8Kx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -39,7 +47,7 @@
         <!--Auth View Controller-->
         <scene sceneID="Mpc-WU-pHH">
             <objects>
-                <viewController id="y8r-jQ-sFT" customClass="AuthViewController" customModule="LoginPas" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthViewController" id="y8r-jQ-sFT" customClass="AuthViewController" customModule="LoginPas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RPs-A3-qka">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,17 +73,17 @@
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jK6-rf-Diy">
                                                     <rect key="frame" x="0.0" y="0.0" width="330" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" textContentType="name"/>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wue-Yy-zBv">
                                                     <rect key="frame" x="0.0" y="66" width="330" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="password"/>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите почту" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xo0-0Y-00f">
                                                     <rect key="frame" x="0.0" y="132" width="330" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" textContentType="name"/>
                                                 </textField>
                                             </subviews>
                                         </stackView>
@@ -93,7 +101,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Войти"/>
                                                     <connections>
-                                                        <action selector="switchLogin:" destination="y8r-jQ-sFT" eventType="touchUpInside" id="xTm-jC-E96"/>
+                                                        <action selector="switchLogin:" destination="y8r-jQ-sFT" eventType="touchUpInside" id="rCY-y5-GMu"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -129,7 +137,7 @@
                     </view>
                     <connections>
                         <outlet property="emailField" destination="xo0-0Y-00f" id="Iga-dd-Qg1"/>
-                        <outlet property="enterButton" destination="wTe-j9-rgs" id="Ydd-2h-w6Q"/>
+                        <outlet property="enterButton" destination="wTe-j9-rgs" id="Fe7-8R-C2a"/>
                         <outlet property="nameField" destination="jK6-rf-Diy" id="Ia2-G5-yBp"/>
                         <outlet property="passwordField" destination="Wue-Yy-zBv" id="2zS-2E-Fdr"/>
                         <outlet property="titleLabel" destination="kGF-S6-W56" id="EPC-ji-qDt"/>
