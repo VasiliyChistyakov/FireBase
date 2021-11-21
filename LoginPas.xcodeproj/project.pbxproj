@@ -23,6 +23,7 @@
 		33DDD87E27496A190030490A /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 33DDD87D27496A190030490A /* FirebaseFunctions */; };
 		33DDD88027496A190030490A /* FirebaseInstallations in Frameworks */ = {isa = PBXBuildFile; productRef = 33DDD87F27496A190030490A /* FirebaseInstallations */; };
 		33DDD88227496D8F0030490A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33DDD88127496D8F0030490A /* GoogleService-Info.plist */; };
+		33F8AFA2274AC936001C5587 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F8AFA1274AC936001C5587 /* ForgotPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		33DDD866274961460030490A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33DDD86C274963CC0030490A /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		33DDD88127496D8F0030490A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		33F8AFA1274AC936001C5587 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				33DDD858274961440030490A /* AppDelegate.swift */,
 				33DDD85A274961440030490A /* SceneDelegate.swift */,
 				33DDD85C274961440030490A /* ViewController.swift */,
+				33F8AFA1274AC936001C5587 /* ForgotPasswordViewController.swift */,
 				33DDD86C274963CC0030490A /* AuthViewController.swift */,
 				33DDD861274961460030490A /* Assets.xcassets */,
 				33DDD85E274961440030490A /* Main.storyboard */,
@@ -175,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33DDD86D274963CC0030490A /* AuthViewController.swift in Sources */,
+				33F8AFA2274AC936001C5587 /* ForgotPasswordViewController.swift in Sources */,
 				33DDD85D274961440030490A /* ViewController.swift in Sources */,
 				33DDD859274961440030490A /* AppDelegate.swift in Sources */,
 				33DDD85B274961440030490A /* SceneDelegate.swift in Sources */,
