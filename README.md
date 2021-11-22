@@ -1,6 +1,6 @@
 # FireBase
 
-Приложение используе FireBase
+Приложение использует FireBase
 
 - FireBase
 
