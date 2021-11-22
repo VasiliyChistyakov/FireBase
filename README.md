@@ -1,12 +1,8 @@
 # FireBase
 
-Приложение использует API [ЦБ РФ](https://www.cbr-xml-daily.ru), для перевода в Рубли.
+Приложение используе FireBase
 
-- URLSession
-- JSON
-- MVC
-- UIKit
-
+- FireBase
 
 <img src="https://user-images.githubusercontent.com/81886542/142907166-8a034306-397e-4509-92af-23391cbad6c1.png" width="300" />
 
