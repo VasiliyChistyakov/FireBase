@@ -3,6 +3,9 @@
 Приложение использует FireBase
 
 - FireBase
+- CAShapeLayer
+- UIBezierPath
+- CABasicAnimation
 
 <img src="https://user-images.githubusercontent.com/81886542/143688219-653185e2-7691-4c42-a70d-cda5036e813c.png" width="300" />
 
