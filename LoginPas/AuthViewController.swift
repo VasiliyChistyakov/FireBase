@@ -13,13 +13,13 @@ class AuthViewController: UIViewController {
     var signup: Bool = true {
         willSet {
             if newValue {
-                titleLabel.text = "Регистрация"
+                titleLabel.text = "Sign up"
                 nameField.isHidden = false
-                enterButton.setTitle("Войти", for: .normal)
+                enterButton.setTitle("Log in", for: .normal)
             } else {
-                titleLabel.text = "Вход"
+                titleLabel.text = "Log in"
                 nameField.isHidden = true
-                enterButton.setTitle("Регистрация", for: .normal)
+                enterButton.setTitle("Sign", for: .normal)
             }
         }
     }

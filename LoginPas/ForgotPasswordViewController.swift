@@ -13,8 +13,7 @@ class ForgotPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+    
     }
     
     @IBAction func forgotPasswordAction(_ sender: UITextField) {
